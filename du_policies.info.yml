@@ -1,7 +1,8 @@
-name: 'DU MODULE'
+name: 'DU Policy'
 type: module
 description: 'ADD DESCRIPTION'
-core_version_requirement: ^10
+core_version_requirement: ^9.5 || ^10
 package: 'DU'
 dependencies:
+- views
 
