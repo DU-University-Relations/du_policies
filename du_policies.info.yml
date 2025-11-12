@@ -1,6 +1,6 @@
 name: 'DU Policy'
 type: module
-description: 'ADD DESCRIPTION'
+description: 'Content type and view block for adding, updating, listing, and searchin DU policy documents in PDF form'
 core_version_requirement: ^9.5 || ^10
 package: 'DU'
 dependencies:
