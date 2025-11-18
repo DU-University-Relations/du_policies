@@ -6,6 +6,9 @@
   "homepage":         "http://www.du.edu",
   "license":          "GPL-2.0+",
   "type":             "drupal-custom-module-package",
+  "require": {
+    "drupal/better_exposed_filters": "^6.0"
+  },
   "extra": {
       "_README": "Policy Package"
   }
