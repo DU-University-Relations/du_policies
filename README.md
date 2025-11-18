@@ -4,7 +4,7 @@ A Drupal custom module for managing and displaying University of Denver policy d
 
 ## Version
 
-**10.25.1** - This version is a carbon copy of the configuration harvested from DU's Drupal 9 instance.
+**10.26.0** - This version is a carbon copy of the configuration harvested from DU's Drupal 9 instance.
 
 ## Description
 
