@@ -1,5 +1,56 @@
 <?php
+
 /**
- * PHP functions for MODULE
+ * @file
+ * Module hooks for du_policies module.
  */
 
+/**
+ * Implements hook_theme().
+ */
+function du_policies_theme($existing, $type, $theme, $path) {
+  return [
+    'paragraph__policy' => [
+      'base hook' => 'paragraph',
+    ],
+    'node__policy' => [
+      'base hook' => 'node',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for paragraph--policy.
+ */
+function du_policies_preprocess_paragraph__policy(&$variables) {
+  // Attach the policy library to the policy paragraph.
+  $variables['#attached']['library'][] = 'du_policies/policy';
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for node--policy.
+ */
+function du_policies_preprocess_node__policy(&$variables) {
+  // Attach the policy library to the policy node.
+  $variables['#attached']['library'][] = 'du_policies/policy';
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function du_policies_theme_registry_alter(&$theme_registry) {
+  // Get the module path.
+  $module_path = \Drupal::service('extension.list.module')->getPath('du_policies');
+  
+  // Force the paragraph--policy template to use the module's template.
+  if (isset($theme_registry['paragraph__policy'])) {
+    $theme_registry['paragraph__policy']['path'] = $module_path . '/templates';
+    $theme_registry['paragraph__policy']['theme path'] = $module_path;
+  }
+  
+  // Force the node--policy template to use the module's template.
+  if (isset($theme_registry['node__policy'])) {
+    $theme_registry['node__policy']['path'] = $module_path . '/templates';
+    $theme_registry['node__policy']['theme path'] = $module_path;
+  }
+}
