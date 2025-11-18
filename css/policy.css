@@ -1,0 +1,113 @@
+/* Policy View */
+.policy header {
+  padding-top: 2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #18171e;
+  margin-bottom: 2rem;
+}
+
+.policy header span {
+  color: #990000;
+  font-size: 2rem;
+  margin-right: 2rem;
+}
+
+.policy .views-exposed-form {
+  display: flex;
+}
+
+.policy .views-exposed-form .js-form-item {
+  width: calc(33% - 2rem);
+  margin: 0 1rem 2rem;
+}
+
+.policy .views-exposed-form .js-form-item label {
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: "BreveSans", sans-serif;
+  margin-bottom: 0.3rem;
+}
+
+.policy .views-exposed-form input[type="text"] {
+  height: 3.3rem;
+}
+
+.policy table thead th {
+  padding: 1.5rem 1rem;
+  line-height: 1.2;
+}
+
+.policy table thead th.is-active {
+  background: #f2f2f2;
+}
+
+.policy table thead th.views-field-field-policy-document {
+  width: 20rem;
+}
+
+.policy table thead th.views-field-field-policy-document.is-active {
+  width: 20rem;
+}
+
+.policy table thead th a {
+  color: #fff;
+  display: flex;
+}
+
+.policy table thead th a:hover {
+  text-decoration: none;
+}
+
+.policy table thead th a .tablesort {
+  margin-left: auto;
+}
+
+.policy table thead th a .tablesort--asc {
+  background-image: url(../images/twistie-down.svg);
+}
+
+.policy table thead th a .tablesort--desc {
+  background-image: url(../images/twistie-up.svg);
+}
+
+.policy table tbody tr td {
+  padding: 1.5rem 1rem;
+  line-height: 1;
+}
+
+.policy table tbody tr td .file {
+  font-weight: 600;
+}
+
+.policy table tbody tr td .file a {
+  color: #8b2332;
+}
+
+.policy table tbody tr td .file-size {
+  display: none;
+}
+
+.policy table tbody tr td.views-field-field-policy-document a:hover {
+  text-decoration: none;
+}
+
+/* Policy Page */
+.policy-content-page div:first-of-type {
+  max-width: 120rem;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  margin-bottom: 10rem;
+}
+
+.policy-content-page div:first-of-type div:first-child {
+  font-weight: 800;
+  text-decoration: underline;
+  margin-bottom: 2rem;
+  font-size: 3rem;
+}
+
+.policy-content-page div:first-of-type a {
+  font-size: 3rem;
+}
