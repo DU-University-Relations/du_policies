@@ -1,0 +1,41 @@
+uuid: c29b3b1f-98f4-4294-a857-c8aa1bd19946
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.policy.field_keywords
+    - field.field.node.policy.field_policy_approver
+    - field.field.node.policy.field_policy_document
+    - field.field.node.policy.field_policy_responsible_departm
+    - field.field.node.policy.field_policy_state
+    - field.field.node.policy.field_updated_date
+    - node.type.policy
+  module:
+    - file
+    - user
+id: node.policy.default
+targetEntityType: node
+bundle: policy
+mode: default
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  field_policy_document:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_keywords: true
+  field_policy_approver: true
+  field_policy_responsible_departm: true
+  field_policy_state: true
+  field_updated_date: true
+  links: true
+  search_api_excerpt: true
