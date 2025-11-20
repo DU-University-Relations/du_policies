@@ -1,9 +1,15 @@
-name: 'DU Policy'
+name: 'DU Policies'
 type: module
 description: 'Content type and view block for adding, updating, listing, and searching DU policy documents in PDF form'
 core_version_requirement: ^9.5 || ^10
 package: 'DU'
 dependencies:
-- views
-- better_exposed_filters
+  - drupal:node
+  - drupal:field
+  - drupal:file
+  - drupal:paragraphs
+  - drupal:options
+  - drupal:datetime
+  - drupal:views
+  - better_exposed_filters
 

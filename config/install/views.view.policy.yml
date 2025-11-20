@@ -14,7 +14,6 @@ dependencies:
     - file
     - node
     - options
-    - taxonomy
     - user
 _core:
   default_config_hash: '-5-DtfOmDmuLBc_CQ-T7JsZ9uzZDhWLYMskvfJI5JTM'
