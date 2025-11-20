@@ -25,7 +25,7 @@ function du_policies_preprocess_paragraph__policy(&$variables) {
   $args = [];
 
   // Check policy state field? -- This throws an error while we don't have taxonomies defined
-  // $tids = $variables['paragaph']->get('field_policy_state')->getValue();
+  // $tids = $variables['paragraph']->get('field_policy_state')->getValue();
   // if ($tids) {
   //   $args[] = implode(',', array_column($tids, 'target_id'));
   // } else {
