@@ -2,15 +2,22 @@ langcode: en
 status: true
 dependencies:
   module:
+    - options
     - paragraphs
-    - taxonomy
 id: paragraph.field_policy_state
 field_name: field_policy_state
 entity_type: paragraph
-type: entity_reference
+type: list_string
 settings:
-  target_type: taxonomy_term
-module: core
+  allowed_values:
+    -
+      value: draft
+      label: Draft
+    -
+      value: approved
+      label: Approved
+  allowed_values_function: ''
+module: options
 locked: false
 cardinality: 1
 translatable: true

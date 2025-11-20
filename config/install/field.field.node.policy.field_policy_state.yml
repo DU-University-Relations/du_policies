@@ -10,7 +10,7 @@ id: node.policy.field_policy_state
 field_name: field_policy_state
 entity_type: node
 bundle: policy
-label: 'Policy State List'
+label: 'Policy State'
 description: ''
 required: true
 translatable: false
