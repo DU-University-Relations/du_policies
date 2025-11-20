@@ -10,7 +10,6 @@ dependencies:
     - node.type.policy
     - taxonomy.vocabulary.policy_approver
     - taxonomy.vocabulary.policy_responsible_department
-    - taxonomy.vocabulary.policy_state
   module:
     - better_exposed_filters
     - datetime
