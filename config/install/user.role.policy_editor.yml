@@ -3,8 +3,6 @@ status: true
 dependencies:
   config:
     - node.type.policy
-    - taxonomy.vocabulary.policy_approver
-    - taxonomy.vocabulary.policy_responsible_department
   module:
     - lightning_core
     - node
@@ -24,17 +22,11 @@ permissions:
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'create policy content'
-  - 'create terms in policy_approver'
-  - 'create terms in policy_responsible_department'
   - 'delete any policy content'
   - 'delete own policy content'
   - 'delete policy revisions'
-  - 'delete terms in policy_approver'
-  - 'delete terms in policy_responsible_department'
   - 'edit any policy content'
   - 'edit own policy content'
-  - 'edit terms in policy_approver'
-  - 'edit terms in policy_responsible_department'
   - 'revert policy revisions'
   - 'view policy revisions'
   - 'view the administration theme'
