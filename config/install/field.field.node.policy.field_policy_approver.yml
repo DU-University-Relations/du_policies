@@ -4,7 +4,8 @@ dependencies:
   config:
     - field.storage.node.field_policy_approver
     - node.type.policy
-    - taxonomy.vocabulary.policy_approver
+  module:
+    - options
 id: node.policy.field_policy_approver
 field_name: field_policy_approver
 entity_type: node
@@ -15,14 +16,5 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings:
-  handler: 'default:taxonomy_term'
-  handler_settings:
-    target_bundles:
-      policy_approver: policy_approver
-    sort:
-      field: name
-      direction: asc
-    auto_create: false
-    auto_create_bundle: ''
-field_type: entity_reference
+settings: {  }
+field_type: list_string

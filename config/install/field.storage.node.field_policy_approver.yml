@@ -3,14 +3,21 @@ status: true
 dependencies:
   module:
     - node
-    - taxonomy
+    - options
 id: node.field_policy_approver
 field_name: field_policy_approver
 entity_type: node
-type: entity_reference
+type: list_string
 settings:
-  target_type: taxonomy_term
-module: core
+  allowed_values:
+    -
+      value: chancellor
+      label: Chancellor
+    -
+      value: board_of_trustees
+      label: 'Board of Trustees'
+  allowed_values_function: ''
+module: options
 locked: false
 cardinality: 1
 translatable: true
