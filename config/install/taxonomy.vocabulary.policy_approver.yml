@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-name: 'Policy Approver'
-vid: policy_approver
-description: ''
-weight: 0
