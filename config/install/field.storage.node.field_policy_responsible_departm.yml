@@ -3,14 +3,93 @@ status: true
 dependencies:
   module:
     - node
-    - taxonomy
+    - options
 id: node.field_policy_responsible_departm
 field_name: field_policy_responsible_departm
 entity_type: node
-type: entity_reference
+type: list_string
 settings:
-  target_type: taxonomy_term
-module: core
+  allowed_values:
+    -
+      value: academic_affairs
+      label: 'Academic Affairs'
+    -
+      value: advancement
+      label: Advancement
+    -
+      value: athletics_and_recreation
+      label: 'Athletics & Recreation'
+    -
+      value: board_of_trustees
+      label: 'Board of Trustees'
+    -
+      value: budget_planning_and_administration
+      label: 'Budget, Planning, & Administration'
+    -
+      value: business_and_financial_affairs
+      label: 'Business & Financial Affairs'
+    -
+      value: campus_safety
+      label: 'Campus Safety'
+    -
+      value: enrollment
+      label: Enrollment
+    -
+      value: enterprise_risk_management
+      label: 'Enterprise Risk Management'
+    -
+      value: environmental_health_and_safety
+      label: 'Environmental Health & Safety'
+    -
+      value: equal_opportunity_and_title_ix
+      label: 'Equal Opportunity & Title IX'
+    -
+      value: faculty_affairs
+      label: 'Faculty Affairs'
+    -
+      value: general_counsel
+      label: 'General Counsel'
+    -
+      value: government_and_community_relations
+      label: 'Government & Community Relations'
+    -
+      value: human_resources_and_inclusive_community
+      label: 'Human Resources & Inclusive Community'
+    -
+      value: information_technology
+      label: 'Information Technology'
+    -
+      value: institutional_research
+      label: 'Institutional Research'
+    -
+      value: internal_audit
+      label: 'Internal Audit'
+    -
+      value: internationalization
+      label: Internationalization
+    -
+      value: office_of_research_and_sponsored_programs
+      label: 'Office of Research & Sponsored Programs'
+    -
+      value: operations
+      label: Operations
+    -
+      value: provost
+      label: Provost
+    -
+      value: research_and_graduate_education
+      label: 'Research & Graduate Education'
+    -
+      value: student_affairs
+      label: 'Student Affairs'
+    -
+      value: university_libraries
+      label: 'University Libraries'
+    -
+      value: university_relations
+      label: 'University Relations'
+  allowed_values_function: ''
+module: options
 locked: false
 cardinality: 1
 translatable: true
