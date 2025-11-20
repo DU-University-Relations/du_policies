@@ -8,15 +8,16 @@ dependencies:
     - field.storage.node.field_policy_responsible_departm
     - field.storage.node.field_updated_date
     - node.type.policy
-    - taxonomy.vocabulary.policy_approver
-    - taxonomy.vocabulary.policy_responsible_department
   module:
     - better_exposed_filters
     - datetime
     - file
     - node
+    - options
     - taxonomy
     - user
+_core:
+  default_config_hash: '-5-DtfOmDmuLBc_CQ-T7JsZ9uzZDhWLYMskvfJI5JTM'
 id: policy
 label: Policy
 module: views
@@ -620,47 +621,39 @@ display:
             field_policy_document: field_policy_document
             title: title
             field_keywords: field_keywords
-        field_policy_approver_target_id:
-          id: field_policy_approver_target_id
+        field_policy_approver_value:
+          id: field_policy_approver_value
           table: node__field_policy_approver
-          field: field_policy_approver_target_id
+          field: field_policy_approver_value
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: taxonomy_index_tid
+          plugin_id: list_field
           operator: or
           value: {  }
           group: 1
           exposed: true
           expose:
-            operator_id: field_policy_approver_target_id_op
-            label: Approver
+            operator_id: field_policy_approver_value_op
+            label: 'Policy Approver'
             description: ''
             use_operator: false
-            operator: field_policy_approver_target_id_op
+            operator: field_policy_approver_value_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_policy_approver_target_id
+            identifier: field_policy_approver_value
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
-              administrator: '0'
+              user_admin: '0'
+              edit_own: '0'
+              content_editor: '0'
               site_admin: '0'
-              page_creator: '0'
-              page_reviewer: '0'
-              home_page_creator: '0'
-              home_page_reviewer: '0'
-              article_creator: '0'
-              article_reviewer: '0'
-              finaid_populator: '0'
-              redirect_manager: '0'
-              cms_content_sync: '0'
-              oauth_user: '0'
-              taxonomy_manager: '0'
-              navigation_manager: '0'
+              administrator: '0'
+              policy_editor: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -675,52 +668,39 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          vid: policy_approver
-          type: select
-          hierarchy: false
-          limit: true
-          error_message: true
-        field_policy_responsible_departm_target_id:
-          id: field_policy_responsible_departm_target_id
+        field_policy_responsible_departm_value:
+          id: field_policy_responsible_departm_value
           table: node__field_policy_responsible_departm
-          field: field_policy_responsible_departm_target_id
+          field: field_policy_responsible_departm_value
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: taxonomy_index_tid
+          plugin_id: list_field
           operator: or
           value: {  }
           group: 1
           exposed: true
           expose:
-            operator_id: field_policy_responsible_departm_target_id_op
-            label: Department
+            operator_id: field_policy_responsible_departm_value_op
+            label: 'Policy Responsible Department'
             description: ''
             use_operator: false
-            operator: field_policy_responsible_departm_target_id_op
+            operator: field_policy_responsible_departm_value_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_policy_responsible_departm_target_id
+            identifier: field_policy_responsible_departm_value
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
-              administrator: '0'
+              user_admin: '0'
+              edit_own: '0'
+              content_editor: '0'
               site_admin: '0'
-              page_creator: '0'
-              page_reviewer: '0'
-              home_page_creator: '0'
-              home_page_reviewer: '0'
-              article_creator: '0'
-              article_reviewer: '0'
-              finaid_populator: '0'
-              redirect_manager: '0'
-              cms_content_sync: '0'
-              oauth_user: '0'
-              taxonomy_manager: '0'
-              navigation_manager: '0'
+              administrator: '0'
+              policy_editor: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -735,11 +715,6 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          vid: policy_responsible_department
-          type: select
-          hierarchy: false
-          limit: true
-          error_message: true
       filter_groups:
         operator: AND
         groups:
@@ -852,7 +827,6 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -875,7 +849,6 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
