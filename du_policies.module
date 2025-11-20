@@ -1,5 +1,40 @@
 <?php
+
 /**
- * PHP functions for MODULE
+ * @file
+ * Module hooks for du_policies module.
  */
 
+use Drupal\views\Views;
+
+/**
+ * Implements hook_theme().
+ */
+function du_policies_theme($existing, $type, $theme, $path) {
+  return [
+    'paragraph__policy' => [
+      'base hook' => 'paragraph',
+    ],
+    'node__policy' => [
+      'base hook' => 'node',
+    ],
+  ];
+}
+
+function du_policies_preprocess_paragraph__policy(&$variables) {
+  $args = [];
+
+  // Check policy state field? -- This throws an error while we don't have taxonomies defined
+  // $tids = $variables['paragraph']->get('field_policy_state')->getValue();
+  // if ($tids) {
+  //   $args[] = implode(',', array_column($tids, 'target_id'));
+  // } else {
+  //   $args[] = 'all';
+  // }
+
+  $view = Views::getView('policy');
+  $render_array = $view->buildRenderable('block_1', $args);
+  $variables['policy'] = $render_array;
+  $variables['#attached']['library'][] = 'du_policies/policy'; // this still doesn't work
+
+}
