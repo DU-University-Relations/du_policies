@@ -22,7 +22,7 @@ function du_policies_theme($existing, $type, $theme, $path) {
 }
 
 function du_policies_preprocess_paragraph__policy(&$variables) {
-  $args=[];
+  $args = [];
 
   // Check policy state field? -- This throws an error while we don't have taxonomies defined
   // $tids = $variables['paragaph']->get('field_policy_state')->getValue();
