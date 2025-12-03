@@ -39,37 +39,27 @@
  * @see template_preprocess_node()
  */
 #}
+<article{{ attributes }}>
+  {{ title_prefix }}
+  
+  {# Page title - use alternative H1 if available #}
+  {% if node.field_alternative_h1.0 is not empty %}
+    <h1{{ title_attributes }}>{{ content.field_alternative_h1 }}</h1>
+  {% else %}
+    <h1{{ title_attributes }}>{{ label }}</h1>
+  {% endif %}
+  
+  {{ title_suffix }}
 
-{% embed  "@organisms/node.twig" %}
-  {% block page_title %}
-      {% if node.field_alternative_h1.0 is not empty %}
-        <h1>{{ content.field_alternative_h1 }}</h1>
-      {% else %}
-      {% include "@atoms/headline.twig" with {'title' : label, 'type' : 'h1'} %}
-      {% endif %}
-  {% endblock %}
-
-  {% block page_overview %}
-    {{ content.field_page_overview }}
-  {% endblock %}
-
-  {% block sub_nav_block %}
-    {% embed "@molecules/sub-nav.twig" %}
-      {% block back_to_parent %}
-        {{ subnav.parentlevelnav }}
-      {% endblock %}
-      {% set toggler_text = 'Explore this Section' %}
-      {% set hide_subnav_block = content.field_hide_subnav_block|field_raw('value') %}
-      {% block sub_nav_menu %}
-          {{ subnav.subnavblock }}
-      {% endblock %}
-    {% endembed %}
-  {% endblock %}
-
-  {% block page_content %}
-    {# Standard content wrapped in two identical back to policy buttons on top/bottom #}
-    <div class="policy-content-page">
-      {{ content|without('field_page_overview', 'sub_nav', 'field_hide_subnav_block', 'field_alternative_h1') }}
+  {# Page overview field if it exists #}
+  {% if content.field_page_overview %}
+    <div class="policy-overview">
+      {{ content.field_page_overview }}
     </div>
-  {% endblock %}
-{% endembed %}
+  {% endif %}
+
+  {# Main content - exclude overview and alternative H1 since they're already displayed #}
+  <div{{ content_attributes }} class="policy-content-page">
+    {{ content|without('field_page_overview', 'field_alternative_h1') }}
+  </div>
+</article>
