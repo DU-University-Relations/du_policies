@@ -22,6 +22,13 @@
   margin: 0 1rem 2rem;
 }
 
+.policy .views-exposed-form .js-form-item label {
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: neue-haas-unica, sans-serif;
+  margin-bottom: .3rem;
+}
+
 .paragraph--type--policy .policy .views-exposed-form input[type="text"] {
   height: 3.3rem;
 }
