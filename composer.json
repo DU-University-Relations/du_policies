@@ -1,6 +1,6 @@
 {
   "name":             "university-of-denver/du_policies",
-  "version":          "10.27.0-alpha",
+  "version":          "10.27.1-alpha",
   "description":      "Package of Policy Related Features",
   "keywords":         ["University of Denver", "drupal"],
   "homepage":         "http://www.du.edu",
