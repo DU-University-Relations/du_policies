@@ -21,20 +21,27 @@ function du_policies_theme($existing, $type, $theme, $path) {
   ];
 }
 
+/**
+ * Implements hook_preprocess_HOOK() for node--policy.
+ */
+function du_policies_preprocess_node__policy(&$variables) {
+  // Attach the policy library to the policy node.
+  $variables['#attached']['library'][] = 'du_policies/policy';
+}
+
 function du_policies_preprocess_paragraph__policy(&$variables) {
   $args = [];
 
-  // Check policy state field? -- This throws an error while we don't have taxonomies defined
-  // $tids = $variables['paragraph']->get('field_policy_state')->getValue();
-  // if ($tids) {
-  //   $args[] = implode(',', array_column($tids, 'target_id'));
-  // } else {
-  //   $args[] = 'all';
-  // }
+  // Check if a specific policy state field is set by the paragraph.
+  $values = $variables['paragraph']->get('field_policy_state')->getValue();
+  if ($values) {
+    $args[] = implode(',', array_column($values, 'value'));
+  } else {
+    $args[] = 'all';
+  }
 
   $view = Views::getView('policy');
   $render_array = $view->buildRenderable('block_1', $args);
   $variables['policy'] = $render_array;
-  $variables['#attached']['library'][] = 'du_policies/policy'; // this still doesn't work
-
+  $variables['#attached']['library'][] = 'du_policies/policy';
 }

@@ -7,7 +7,8 @@
   "license":          "GPL-2.0+",
   "type":             "drupal-custom-module-package",
   "require": {
-    "drupal/better_exposed_filters": "^6.0"
+    "drupal/better_exposed_filters": "^6.0",
+    "drupal/paragraphs": "^1.0"
   },
   "extra": {
       "_README": "Policy Package"

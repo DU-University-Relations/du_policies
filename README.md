@@ -4,6 +4,7 @@ A Drupal custom module for managing and displaying University of Denver policy d
 
 ## Version
 
+**10.27.0-alpha** Installs the module without any config so that it doesn't conflict existing config on du.edu. It adds the css library used from the module and incorporates and refactored policy node template. 
 **10.26.2** - Removes the use of taxonomy to create drop-down fields, using text lists instead. Also adds twig template usage. 
 **10.26.0** - This version is a carbon copy of the configuration harvested from DU's Drupal 9 instance.
 
@@ -17,17 +18,13 @@ The DU Policies module provides a complete content type, paragraph type, views, 
 Policy Node (node.type.policy)
 ├── Field: Policy Document (field_policy_document) - File upload
 ├── Field: Keywords (field_keywords) - Text
-├── Field: Policy Approver (field_policy_approver) - Taxonomy reference
-│   └── Taxonomy: Policy Approver (taxonomy.vocabulary.policy_approver)
-├── Field: Policy Responsible Department (field_policy_responsible_departm) - Taxonomy reference
-│   └── Taxonomy: Policy Responsible Department (taxonomy.vocabulary.policy_responsible_department)
-├── Field: Policy State (field_policy_state) - Taxonomy reference
-│   └── Taxonomy: Policy State (taxonomy.vocabulary.policy_state)
+├── Field: Policy Approver (field_policy_approver)
+├── Field: Policy Responsible Department (field_policy_responsible_departm) 
+├── Field: Policy State (field_policy_state)
 └── Field: Updated Date (field_updated_date) - Date
 
 Policy Paragraph (paragraphs.paragraphs_type.policy)
-├── Field: Policy State (field_policy_state) - Taxonomy reference
-│   └── Taxonomy: Policy State (taxonomy.vocabulary.policy_state)
+├── Field: Policy State (field_policy_state)
 └── Renders policy view block within page content
 
 Policy View Block (views.view.policy)
