@@ -43,15 +43,17 @@ function du_policies_preprocess_paragraph__policy(&$variables) {
   $args = [];
 
   // Check if a specific policy state field is set by the paragraph.
-  $values = $variables['paragraph']->get('field_policy_state')->getValue();
-  if ($values) {
-    $args[] = implode(',', array_column($values, 'value'));
-  } else {
+  $tids = $variables['paragraph']->get('field_policy_state')->getValue();
+  if ($tids) {
+    $args[] = implode(',', array_column($tids, 'target_id'));
+  }
+  else {
     $args[] = 'all';
   }
 
   $view = Views::getView('policy');
   $render_array = $view->buildRenderable('block_1', $args);
   $variables['policy'] = $render_array;
+
   $variables['#attached']['library'][] = 'du_policies/policy';
 }
