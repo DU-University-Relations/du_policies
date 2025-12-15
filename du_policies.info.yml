@@ -1,7 +1,7 @@
 name: 'DU Policy'
 type: module
 description: 'ADD DESCRIPTION'
-version: 9.28.0
+version: 9.28.1
 core_version_requirement: ^9.5 || ^10
 package: 'DU'
 dependencies:
