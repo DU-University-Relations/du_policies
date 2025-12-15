@@ -39,7 +39,7 @@
 }
 
 .policy table thead th.is-active {
-  background: #525252;
+  background: #000;
 }
 
 .policy table thead th.views-field-field-policy-document {
