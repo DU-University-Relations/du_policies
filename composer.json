@@ -1,13 +1,14 @@
 {
   "name":             "university-of-denver/du_policies",
-  "version":          "10.26.2",
+  "version":          "9.28.3",
   "description":      "Package of Policy Related Features",
   "keywords":         ["University of Denver", "drupal"],
   "homepage":         "http://www.du.edu",
   "license":          "GPL-2.0+",
   "type":             "drupal-custom-module-package",
   "require": {
-    "drupal/better_exposed_filters": "^6.0"
+    "drupal/better_exposed_filters": "^6.0",
+    "drupal/paragraphs": "^1.0"
   },
   "extra": {
       "_README": "Policy Package"
