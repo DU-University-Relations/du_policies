@@ -1,7 +1,8 @@
 name: 'DU Policies'
-type: module
+type: custom-module
 description: 'Content type and view block for adding, updating, listing, and searching DU policy documents in PDF form'
 core_version_requirement: ^9.5 || ^10
+version: 9.28.4
 package: 'DU'
 dependencies:
   - drupal:node
